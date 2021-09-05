@@ -1,4 +1,5 @@
 # Sprint 3 IT Academy | Shop
+Cecilia Carbajal Belmont
 ## Introduction
 
 A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.

@@ -1,5 +1,8 @@
+
+
 // Exercise 11
 // Move this variable to a json file and load the data in this js
+
 var products = [
     {
         name: 'cooking oil',
@@ -67,9 +70,30 @@ var total = 0;
 
 // Exercise 1
 function addToCartList(id) {
+    
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cartList array
-}
+    const duplicate = cart.some(pro=>pro.id===proAdd.id)
+        if(duplicate){
+            const products = cart.map((produ)=>{
+                if(produ.id===proAdd.id){
+                    produ.quantitat++
+                    return produ;
+                
+                }else {
+                    return produ;
+
+                }
+            });
+            setCart(c=>c=[...products])
+        }
+
+        else{
+            setCart(c=>c=[...c,proAdd])
+        }
+        
+    }
+    
 
 // Exercise 2
 function cleanCart() {
