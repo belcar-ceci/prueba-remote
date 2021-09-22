@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Sprint_3_ShopNow</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container"> 
+                <img class="logo" src="./images/logo.png" alt="logo-shop">
+                
+            <!-- Desplegable Menú -->
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-sm-end" id="navbarContenido">
+                <ul class="navbar-nav">
+                    <li class="nav-item mb-3">
+                            <a class="nav-link text-white" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a class="nav-link text-white" href="#row-about">About</a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a class="nav-link text-white" href="#row-categories">Service</a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a class="nav-link text-white" href="#row-contacto">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 class="text-center m-5"><i class="fas fa-shopping-cart mr-2"></i> ShopNow</h1>
+            <h3 class="text-center m-3">Welcome to your Online Shopping Store.</h3>
+            <button class="btn mt-3">Registrate ahora</button>
+    
+        </div>
+    </header>
+
+    <!-- Buttons -->
+    <main>
+        <h3 class="text-center text-dark m-3">Select your category:</h3>
+    <div class=container1 id="row-categories">
+        <div class="card" style="width: 20rem;">
+            <img src="./images/card-grocery.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Grocery</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button type="button" onclick="window.location.href = 'grocery.html#grocery';" class="btn ml-5 mt-3 btn-primary">Grocery</button>
+            </div>
+          </div>
+        
+        
+          <div class="card" style="width: 20rem;">
+            <img src="/images/card-beauty.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Beauty</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button type="button" onclick="window.location.href = 'grocery.html#beauty';" class="btn ml-5 mt-3 btn-primary">Beauty</button>
+            </div>
+          </div>
+          <div class="card" style="width: 20rem;">
+            <img src="./images/card-clothes.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Clothes</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button type="button" onclick="window.location.href = 'grocery.html#clothes';" class="btn ml-5 mt-3 btn-primary">Clothes</button>
+            </div>
+          </div>
+        
+    </div>
+    </main>
+    <footer>
+        <div class="row text-white" >
+            <div class="container" >
+                <div class="row gy-5" id="row-contacto">
+                    <div class="col-lg-4 px-5">
+                        <h4 class="font-weight-bold mb-4">About</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint. </p>
+                    </div>
+                    <div class="col-lg-4 px-5">
+                        <h4 class="font-weight-bold mb-4">FAQ</h4>
+                        <ul>
+                            <li>Lorem ipsum dolor</li>
+                            <li>Consectetur adipiscing elit</li>
+                            <li>Parvi enim primo</li>
+                            <li>Tamquam omnino sine</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 px-5">
+                        <h4 class="font-weight-bold mb-4">Location</h4>
+                        <div class="d-flex">
+                            <span class="material-icons">
+                                local_phone
+                            </span>
+                            <p class="ml-3">(212)769-5100</p>
+                        </div>
+                        <div class="d-flex">
+                            <span class="material-icons">
+                                house
+                            </span>
+                            <p class="ml-3">Central Park West 79, 
+                                Lorem Ipsum, 10024</p>
+                        </div>
+                        <div class="d-flex">
+                            <span class="material-icons">
+                                email
+                            </span>
+                            <p class="ml-3">loremipsum@email.com</p>
+                        </div>
+                        <div class="socials d-flex justify-content-between">
+                            <div class="d-flex">
+                                <span class="material-icons">
+                                    facebook
+                                </span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="material-icons">
+                                    whatsapp
+                                </span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="material-icons">
+                                    tiktok
+                                </span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="material-icons">
+                                    telegram
+                                </span>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+    </footer>
+
+    <!-- script tags -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+body{
+    font-family: Poppins;
+}
+
+.container{
+    max-width: 1100px;
+
+}
+header{
+    background-image:url("../images/shop3.jpg");
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}
+
+.logo{
+    width: 50px;
+}
+.title-color{
+    color:#4C81E5;
+}
+
+.text-center {
+    color: white;
+}
+.btn {
+    background-color: #004085;
+    border-radius: 20px;
+    color:white;
+    font-weight: bold;
+    height: 3.5vw;; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+    margin-left: 35vw;
+    transform: translateX(-50%);
+}
+.ml-5, .mx-5 {
+    margin-left: 6rem!important;
+}
+.container1{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.card{
+    width: 330px;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+.card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+.card img{
+    width: 337px;
+    height: 220px;
+}
+footer{
+    background-color:#004085;
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+.row{
+    margin: 0;
+}
+.socials{
+    margin-right: 40%;
+    display:flex;
+    position: relative;
+    color: white;
+}
+
+@media(max-width:990px){
+    .navbar-nav{
+        background-color: #004085;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;    
+        padding-left: 20px;   
+        width: 40%;
+        align-items: center;
+        margin-left: 60%;
+    }
+    
+    
+    .collapse:not(.show) {
+        /*display: block !important;*/
+        height: auto !important;
+        overflow: visible !important;
+      }
+    .login{
+        top:7vw;
+    }
+    .btn {
+        height: 5.5vw; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+        margin-left: 50vw;
+        transform: translateX(-50%);
+    }
+    
+
+    
+}
+
+@media (max-width: 560px){
+    .btn {
+        height: 15.5vw;
+        margin-left: 50vw;
+        transform: translateX(-50%);
+    }
+}
