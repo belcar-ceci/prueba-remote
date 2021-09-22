@@ -24,7 +24,7 @@ formulario.addEventListener('submit', (e) => {
 
 
     if (element.value == '') { // sin completar, no envia
-        e.preventDefault(); 
+        e.preventDefault(); //previene envío de fomulario
         element.classList.add("invalid"); 
     }
     /* Al menos 3 carácters */
@@ -36,7 +36,7 @@ formulario.addEventListener('submit', (e) => {
     /* Nombre contener solo letras*/
     if (/^[a-z ,.'-]+$/i.test(firtsName.value)) {
         e.preventDefault(); // 
-        firtsName.classList.add("invalido"); // añadir una clase
+        firtsName.classList.add("invalido"); 
     }
     /* Cognom debe contener solo letras*/
     if (/^[a-z ,.'-]+$/i.test(lastName.value)) {
@@ -58,8 +58,26 @@ formulario.addEventListener('submit', (e) => {
         e.preventDefault(); // Event anular envío de fomulario
         email.classList.add("invalido"); // añadir una clase
     }
-}); //previene  envío de fomulario
+}); 
     
 });
 
 }
+
+/*if(email.lenght ==0 || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+        alert("El email es incorrecto");
+        return false;
+   }
+   return true;
+    
+   if(password.lenght == 0 || /^(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[#?!@$%^&*\-_]).{8,}$/.test(password)){
+       alert("debes rellenarlo todo")
+       return false;
+   }
+   return true;
+
+   if(phone.lenght == 0 || /^\d{7,14}$/.test(phone)){
+    alert("debes rellenarlo todo")
+    return false;
+}
+return true;*/
