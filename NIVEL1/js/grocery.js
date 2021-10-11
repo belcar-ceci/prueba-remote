@@ -1,11 +1,5 @@
 //console.log('👩‍🔬 ');
 
-
-const btnAdd = document.getElementsByClassName('btn-primary')
-for (let i=0; i<btnAdd.length; i++){
-    btnAdd[i].addEventListener('click', addToCart)
-}
-
 var products = [
     {
         name: 'cooking oil',
@@ -53,7 +47,6 @@ var products = [
         type: 'clothes'
     }
     ];
-
 var cartList = [];
 var cart = [];
 var subtotal = {
@@ -72,18 +65,16 @@ var subtotal = {
 };
 var total = 0;
 
-
 // Exercise 1
   // 1. Loop for to the array products to get the item to add to cart
    // 2. Add found product to the cartList array
 function addToCartList(id) {
-    
-    for(let i=0; i<products.length; i++){
-        if(id===i){
-            cartList.push(products[i]);
-        }
-    }
-    
+    cartList.push(products[id-1]);
+//    for(let i=0; i<products.length; i++){
+ //       if(id===i){
+//            cartList.push(products[i]);
+//        }
+//    }
 }
 
 // Exercise 2
@@ -92,127 +83,129 @@ function cleanCart() {
 }
 
 // Exercise 3
-function calculateSubtotals(id) {
+function calculateSubtotals() {
     // 1. Create a for loop on the "cartList" array 
     // 2. Implement inside the loop an if...else or switch...case to add the quantities of each type of product, obtaining the subtotals: subtotalGrocery, subtotalBeauty and subtotalClothes
-    for (let i=0; i<cartList.length; i++){
-        switch(cartList[i].type){
-            case 'grocery': 
-            subtotal.grocery.value = subtotal.grocery.value + cartList[i].price;
-            console.log(subtotal.grocery);
-            case 'beauty': 
-            subtotal.beauty.value = subtotal.beauty.value + + cartList[i].price;
-            console.log(subtotal.beauty);
-            case 'clothes': 
-            subtotal.clothes.value = subtotal.clothes.value + cartList[i].price;
-            console.log(subtotal.clothes);
+    for (let i= 0; i<cartList.length; i++){
+        switch (cartList[i].type) {
+            case 'grocery':
+                subtotal.grocery.value = subtotal.grocery.value + cartList[i].price;
+                break;
 
-            default: 
+            case 'beauty':
+                subtotal.beauty.value = subtotal.beauty.value + + cartList[i].price;
+                break;
+
+            case 'clothes':
+                subtotal.clothes.value = subtotal.clothes.value + + cartList[i].price;
+                break;
+        
+            default:
                 break;
         }
     }
 }
-
 // Exercise 4
-function calculateTotal(id) {
+function calculateTotal() {
     // Calculate total price of the cart either using the "cartList" array
     for(var item in carList){
         total += cartList[item].price;
     }
-    /*for(let i=0; i<cartList.length; i++){
-        if(products[i].cart){
-            total+=products[i].total;
-        }
-    }
-    return calculateTotal*/
+    //for(let i=0; i<cartList.length; i++){
+    //    if(products[i].cart){
+    //        total+=products[i].total;
+    //    }
+    //}
+    //return calculateTotal*/ fin ejercicio 5
     for(var item in subtotal){
         total -= subtotal[item].discount;
     }
 }
 
-
 // Exercise 5
 function applyPromotionsSubtotals() {
-     //Iniciar variables ( valor 0, por defecto )
-     var discountOil = 0;
-     var discountMescla = 0;
-     
-     //1- Buscar cantidad de aceites
-     var arrayOil = cartList.filter(product => product.name == 'cooking oil');
-     var quantitatOil = arrayOil.length;
-     console.log("Quantitat Oil: " + quantitatOil)
- 
-     //2- Buscar cantidad mezcla
-     var arrayMescla = cartList.filter(product => product.name == 'Instant cupcake mixture');
-     var quantitatMescla = arrayMescla.length;   
-     console.log("Quantitat Mescla: "+ quantitatMescla)
- 
-     //3- Si compra más de 3 oils el price será 10 eur
-     if (quantitatOil>3){
-         var discountOil = ((0.5)*quantitatOil);
- 
-     }
-     //4- Si compra más de 10 mescla el price será = (price/3)*2
-     if (quantitatMezcla>10){
-         var priceMescla = products[2].price;
-         var discountMesclaUnitari = (priceMezcla/3);
-         var discountMescla = (discountMesclaUnitari * quantitatMescla);
- 
-     }
-     subtotal.grocery.discount = discountOil + discountMescla;
-     console.log("Descuento Oil: " + discountOil + ". Descuento mescla: " + discountMescla);
- }
- 
+    //Inicialització de variables ( valor 0, por defecto )
+    var discountAceite = 0;
+    var discountMezcla = 0;
+    // (+info de array.filter()) -> https://ed.team/blog/javascript-filtrar-elementos-de-un-array-con-filter
+    
+    //1- Buscar cantidad aceite
+    var arrayAceite = cartList.filter(product => product.name == 'cooking oil');
+    var quantitatAceite = arrayAceite.length;
+    console.log("Quantitat Aceite: " + quantitatAceite)
 
+    //2- cantidad mezcla
+    var arrayMezcla = cartList.filter(product => product.name == 'Instant cupcake mixture');
+    var quantitatMezcla = arrayMezcla.length;   
+    console.log("Quantitat Mezcla: "+ quantitatMezcla)
+
+    //3- Si compra más de 3 aceites el precio será 10 eur
+    if (quantitatAceite>3){
+        var discountAceite = ((0.5)*quantitatAceite);
+
+    }
+    //4- Si compra más de 10 mezclas el precio será = (price/3)*2
+    if (quantitatMezcla>10){
+        var priceMezcla = products[2].price;
+        var discountMezclaUnitari = (priceMezcla/3);
+        var discountMezcla = (discountMezclaUnitari * quantitatMezcla);
+
+    }
+    subtotal.grocery.discount = discountAceite + discountMezcla;
+    console.log("Descuento aceite: " + discountAceite + ". Descuento mezcla: " + discountMezcla);
+}
 
 // Exercise 6
-function generateCart() {
+function generateCart(cartList) {
     // Using the "cartlist" array that contains all the items in the shopping cart, 
     // generate the "cart" array that does not contain repeated items, instead each item of this array "cart" shows the quantity of product.
    
+    // 1- item en la lista nueva
 
-        // 1- item en la lista nueva
-        for (i = 0; i<cartList.length; i++) {
-            var producte = cartList[i];
-            var item = cart.find( producteCart => producteCart.name === producte.name);
-            // 2- Si no existeix crear-lo.
-            if (item == null) {
-                item = producte;
-                item.cantidad = 1;
-                cart.push(item);
-            }
-                // 2- al tener el item, aumentar la cantidad.
-            else {
-                item.cantidad = item.cantidad + 1 ;
-            }
-               
-            item.subtotal = item.price * item.quantity ;
-            item.subtotalWithDiscount = 0;
+    for (i = 0; i<cartList.length; i++) {
+        var producte = cartList[i];
+        var item = cart.find( producteCart => producteCart.name === producte.name);
+        // 2- crear item
+        if (item == null) {
+            item = producte;
+            item.quantity = 1;
+            cart.push(item);
         }
-    
+        
+        // 3- al tener el item, aumentar la cantidad.
+        else {
+            item.quantity = item.quantity + 1 ;
+        }
+                    //En qualsevol cas:
+        item.subtotal = item.price * item.quantity ;
+        item.subtotalWithDiscount = 0;
+    }
 }
 
 // Exercise 7
-function applyPromotionsCart() {
+function applyPromotionsCart(cart) {
     // Apply promotions to each item in the array "cart"
 
-    // Promoción cantidad oil
+    // Promoción cantidad aceite
     var indexCartOil = cart.findIndex(products => products.name === 'cooking oil');
     if (indexCartOil != -1 && cart[indexCartOil].quantity > 3) {
         cart[indexCartOil].subtotalWithDiscount = ((0.5)*cart[indexCartOil].quantity);
     }
 
-    // Promoción cantidad mescla
+
+    // Promoción cantidad mezcla
     var indexCartMescla = cart.findIndex(products => products.name === 'Instant cupcake mixture');
     if (indexCartMescla != -1 && cart[indexCartMescla].quantity > 10) {
-        //Inicializació de variables per aquest apartat
+        //Inicio de variables
         var priceMescla = products[2].price;
         var discountMesclaUnitari = (priceMescla/3);
-        cart[indexCartMescla].subtotalWithDiscount = discountMesclaUnitari * cart[indexCartMescla].quantity ;
+        cart[indexCartMescla].subtotalWithDiscount = discountMesclaUnitari * cart[indexCartMescla].quantity;
     }
 }
+
+
 // Exercise 8
-function addToCart (event) {
+function addToCart(event) {
     let btn = event.target
     let btn_parent = btn.parentElement
     let btn_grandparent = btn.parentElement.parentElement
